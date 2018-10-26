@@ -8,6 +8,10 @@ async function getPic(){
     });
     const page = await browser.newPage();
     await page.goto('https://google.com');
+    await page.setViewport({
+        width: 1000,
+        height: 500
+    });
     console.log("Taking Screenshot");
     await page.screenshot(
         {
@@ -18,7 +22,7 @@ async function getPic(){
     console.log("Took screenshot");
     console.log("The name of the photo is " + photoName);
 
-    await browser.close();
+    //await browser.close();
 }
 
 getPic();
