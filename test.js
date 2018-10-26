@@ -3,7 +3,9 @@ const puppeteer = require('puppeteer');
 async function getPic(){
     var num = Math.floor(Math.random()*100);
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: false
+    });
     const page = await browser.newPage();
     await page.goto('https://google.com');
     console.log("Taking Screenshot");
